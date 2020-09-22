@@ -1,0 +1,47 @@
+﻿@model PagedList.IPagedList<Цветочный_магазин.Models.Flower>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- ================ trending product section start ================= -->
+<section class="section-margin calc-60px">
+    <div class="container">
+        <div class="section-intro pb-60px">
+            <h2>Все <span class="section-intro__style">Цветы</span></h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card text-center card-product">
+                        <div class="card-product__img">
+                            @if (item.image == null)
+                            {
+                                <img class="card-img" src=@Url.Content("~/Content/img/default.png") alt="">
+                            }
+                            else
+                            {
+                                <img class="card-img" src=@Url.Content("~/Content/userfiles/" + item.image) alt="">
+                            }
+                            <ul class="card-product__imgOverlay">
+                                <li><a href=" /Orders/Create/@item.id"><i class="ti-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <p>@item.type</p>
+                            <h4 class="card-product__title"> @item.name</h4>
+                            <p class="card-product__price">@item.price руб.</p>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+    </div>
+</section>
+
+Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("AllFlowers", new { page }))

@@ -1,0 +1,77 @@
+﻿@model Цветочный_магазин.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+<section class="cart_area">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                <h2>Подробно о заказе</h2>
+                <div>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dd>
+                            @Html.DisplayFor(model => model.flower.id)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.flower.type)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.flower.type)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.flower.name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.flower.name)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.date)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.date)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.surname)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.surname)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.phone)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.phone)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @if (Model.User == null)
+                    {
+                        @Html.ActionLink("Принять", "Edit", new { id = Model.id }, new { @class="gray_btn" });
+                        @Html.ActionLink("Отклонить", "Delete", new { id = Model.id }, new { @class="gray_btn" });
+                    }
+                    @Html.ActionLink("Вернуться назад", "Index")
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

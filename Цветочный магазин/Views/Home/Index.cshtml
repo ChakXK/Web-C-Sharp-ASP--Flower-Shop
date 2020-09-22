@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Цветочный_магазин.Models.Flower>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!--================ Hero Carousel start =================-->
+<section class="section-margin mt-0">
+    <div class="owl-carousel owl-theme hero-carousel">
+        @foreach (var myitem in Model)
+        {
+        <div class="hero-carousel__slide">
+            @if (myitem.image == null)
+            {
+                <img class="card-img" src=@Url.Content("~/Content/img/default.png") alt="">
+            }
+            else
+            {
+         <img src=@Url.Content("~/Content/userfiles/"+ myitem.image) alt="" class="img-fluid">
+            }
+            <a href="/Home/Details/@myitem.id" class="hero-carousel__slideOverlay">
+                <h3>@myitem.name</h3>
+                <p>@myitem.type</p>
+                <p>@myitem.price руб.</p>
+            </a>
+        </div>
+        }
+        </div>
+</section>
+
+<!--================ Hero Carousel end =================-->

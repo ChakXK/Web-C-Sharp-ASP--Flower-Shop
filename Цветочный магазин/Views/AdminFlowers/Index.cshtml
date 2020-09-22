@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Цветочный_магазин.Models.Flower>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <h2>Все цветы в нашем магазине</h2>
+                    <p>
+                        <a class="button button-login w-30" href="/AdminFlowers/Create">Добавить</a> 
+                    </p>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.type)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.price)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.availability)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.type)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.price)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.availability)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Редактировать", "Edit", new { id = item.id }, new { @class="gray_btn" }) 
+                                    @Html.ActionLink("Подробно", "Details", "Home", new { id = item.id }, new { @class="gray_btn" }) 
+                                    @Html.ActionLink("Удалить", "Delete", new { id = item.id }, new { @class="gray_btn" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+
+             </div>
+          </div>
+      </div>
+  </section>
+  <!--================End Cart Area =================-->

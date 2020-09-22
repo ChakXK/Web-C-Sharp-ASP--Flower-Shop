@@ -1,0 +1,119 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flowers Shop - Home</title>
+    <link rel="icon" href="~/Content/img/Fevicon.png" type="image/png">
+    <link rel="stylesheet" href="~/Content/vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="~/Content/vendors/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/vendors/nice-select/nice-select.css">
+    <link rel="stylesheet" href="~/Content/vendors/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Content/vendors/owl-carousel/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="~/Content/css/style.css">
+</head>
+<body>
+    <!--================ Start Header Menu Area =================-->
+    @Html.Partial("_LoginPartial")
+    <!--================ End Header Menu Area =================-->
+    <main class="site-main">
+
+        <!--================ Hero banner start =================-->
+        <section class="hero-banner">
+            <div class="container">
+                <div class="row no-gutters align-items-center pt-60px">
+                    <div class="col-5 d-none d-sm-block">
+                        <div class="hero-banner__img">
+                            <img class="img-fluid" src="~/Content/img/home/hero-banner.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-sm-7 col-lg-6 offset-lg-1 pl-4 pl-md-5 pl-lg-0">
+                        <div class="hero-banner__content">
+                            <h4>Интернет магазин</h4>
+                            <h1>Flowers</h1>
+                            <p>Флористы нашего интернет магазина цветов предлагают эксклюзивные букеты, авторские композиции 
+                            и цветочные корзины на любой вкус и цвет. Но, прежде чем оформлять заказ цветов с доставкой , 
+                            следует точно определиться с выбором букета, то есть из каких цветов он будет состоять, 
+                            ведь каждый цветок, кроме элегантности и утонченности, обладает индивидуальным характером 
+                            и несет свою собственную символику</p>
+                            <a class="button button-hero" href="/Home/AllFlowers">Посмотреть цветы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ Hero banner start =================-->
+        @RenderBody()
+    </main>
+    <!--================ Start footer Area  =================-->
+    <footer class="footer">
+        <div class="footer-area">
+            <div class="container">
+                <div class="row section_gap">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                            <h4 class="footer_title large_title">Цветочный магазин</h4>
+                            <p>
+                                Интернет-магазин Flowers широко раскрывает двери для всех, 
+                                кто хочет создать неповторимую атмосферу праздника цветочными композициями
+                                или же порадовать букетом своих любимых, родных и близких, друзей и 
+                                сотрудников, при этом доставка цветов  – сервисная услуга нашего 
+                                магазина – избавляет заказчиков от изнуряющих поездок по городу, 
+                                позволяет купить цветы дешево и экономит их драгоценное время.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                            <h4 class="footer_title">Контакты</h4>
+                            <div class="ml-40">
+                                <p class="sm-head">
+                                    <span class="fa fa-location-arrow"></span>
+                                    Head Office
+                                </p>
+                                <p>123, Main Street, Your City</p>
+
+                                <p class="sm-head">
+                                    <span class="fa fa-phone"></span>
+                                    Phone Number
+                                </p>
+                                <p>
+                                    +123 456 7890 <br>
+                                    +123 456 7890
+                                </p>
+
+                                <p class="sm-head">
+                                    <span class="fa fa-envelope"></span>
+                                    Email
+                                </p>
+                                <p>
+                                    info@infoexample.com <br>
+                                    www.infoexample.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--================ End footer Area  =================-->
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/vendors/skrollr.min.js"></script>
+    <script src="~/Content/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/Content/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="~/Content/vendors/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Content/vendors/mail-script.js"></script>
+    <script src="~/Content/js/main.js"></script>
+</body>
+</html>

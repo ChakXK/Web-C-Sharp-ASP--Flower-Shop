@@ -1,0 +1,73 @@
+﻿@model Цветочный_магазин.Models.Order
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<section class="cart_area">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+
+                <h2>Отмена заказа</h2>
+
+                <h3>Подтвердите отмену заказа</h3>
+                <div>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.flower.type)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.flower.type)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.date)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.date)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.surname)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.surname)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.phone)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.phone)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Отклонить" class="button button-login w-100" /> |
+                            @Html.ActionLink("Вернуться назад", "Index")
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
